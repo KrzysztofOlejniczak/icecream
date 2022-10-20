@@ -4,4 +4,8 @@
  */
 
 // Style dla pliku z przykładem HTML fragmentu
-@import './example';
+@import './variables';
+@import './resets';
+@import './setup';
+@import './partials/products';
+@import './partials/reviews';
