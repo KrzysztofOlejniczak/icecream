@@ -1,0 +1,21 @@
+@use '../utils/mixins' as *;
+@use '../variables' as var;
+
+.header {
+  background-color: var.$pink_bg;
+  &__container {
+    min-width: 320px;
+    height: 502px;
+  }
+  &__logo {
+    display: block;
+    padding: 6px 0 0 20px;
+  }
+  &__button {
+    border: none;
+    background-color: inherit;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+  }
+}
