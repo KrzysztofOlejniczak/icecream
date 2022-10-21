@@ -2,14 +2,17 @@
 @use '../variables' as var;
 
 .header {
+  position: relative;
   background-color: var.$pink_bg;
+  z-index: 1;
+  overflow: hidden;
   &__container {
+    padding: 6px 20px;
     min-width: 320px;
     height: 502px;
   }
   &__logo {
     display: block;
-    padding: 6px 0 0 20px;
   }
   &__button {
     border: none;
@@ -17,5 +20,76 @@
     position: absolute;
     right: 20px;
     top: 25px;
+  }
+  &__hero {
+  }
+  &__heading {
+    font-family: var.$secondaryFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var.$white;
+    padding-top: 137px;
+    padding-right: 62px;
+    max-width: 230px;
+    &--highlight {
+      font-size: 48px;
+      line-height: 0.96;
+      color: var.$red;
+      padding: 0;
+    }
+  }
+  &__btn-list {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding-top: 19px;
+  }
+  &__btn {
+    height: 24px;
+    border-radius: 20px;
+    border: none;
+    font-family: var.$primaryFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 1.25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &--red {
+      background-color: var.$red;
+      color: var.$white;
+      width: 62.4px;
+    }
+    &--white {
+      background-color: var.$white;
+      color: var.$red;
+      width: 82.8px;
+    }
+  }
+  &__circle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-124px);
+    bottom: 75px;
+    width: 346px;
+    height: 344px;
+    border: none;
+    border-radius: 50%;
+    background-color: var.$lightPink;
+    z-index: -1;
+  }
+  &__box1 {
+    position: absolute;
+    width: 171px;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-32px);
+    z-index: -1;
   }
 }
