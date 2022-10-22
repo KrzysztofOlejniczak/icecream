@@ -1,17 +1,17 @@
 <header class="header">
   <div class="header__container">
     <ul class="header__menu">
-      <li>
+      <li class="header__menu-item">
         <a href="#">
           <picture class="header__logo">
             <source srcset="./images/header/logo.png 1x, ./images/header/logo@2x.png 2x" />
             <img src="./images/header/logo.png" alt="logo" /></picture
         ></a>
       </li>
-      <li>
+      <li class="header__menu-item">
         <nav class="menu"></nav>
       </li>
-      <li>
+      <li class="header__menu-item">
         <button class="header__btn-menu" type="button">
           <svg
             width="20"
@@ -25,6 +25,26 @@
             <path d="M0 13H20" stroke="#D41443" />
           </svg>
         </button>
+      </li>
+      <li class="header__menu-item">
+        <a href="#" class="header__btn-link"
+          >Buy now
+          <svg
+            class="header__btn-link-icon"
+            width="7"
+            height="10"
+            viewBox="0 0 7 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.74213 1L5.76728 5L1.74213 9"
+              stroke="#D41443"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            /></svg
+        ></a>
       </li>
     </ul>
     <section class="header__hero">
@@ -72,6 +92,22 @@
               <img src="./images/header/btn_medium.png" alt="" /></picture
           ></a>
         </div>
+      </div>
+      <div class="header__box-right">
+        <picture>
+          <source
+            srcset="./images/header/tasty_medium.png 1x, ./images/header/tasty_medium@2x.png 2x"
+            media="(min-width: 768px)" />
+          <img src="./images/header/tasty_medium.png" alt=""
+        /></picture>
+      </div>
+      <div class="header__box-cafes">
+        <p class="header__box-number">16</p>
+        <p class="header__box-dscr">cafes</p>
+      </div>
+      <div class="header__box-trucks">
+        <p class="header__box-number">23</p>
+        <p class="header__box-dscr">food trucks</p>
       </div>
     </section>
   </div>

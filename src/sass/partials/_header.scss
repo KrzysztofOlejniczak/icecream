@@ -16,12 +16,17 @@
     align-items: center;
     justify-content: space-between;
   }
+  &__menu-item:nth-of-type(2),
+  &__menu-item:nth-of-type(4) {
+    display: none;
+  }
   &__logo {
     display: block;
   }
   &__btn-menu {
     border: none;
     background-color: inherit;
+    cursor: pointer;
   }
   // &__hero {
   // }
@@ -58,9 +63,6 @@
     height: 24px;
     border-radius: 20px;
     border: none;
-    font-family: var.$primaryFont;
-    font-style: normal;
-    font-weight: 400;
     font-size: 8px;
     line-height: 1.25;
     display: flex;
@@ -101,6 +103,9 @@
   &__box-left {
     display: none;
   }
+  &__box-right {
+    display: none;
+  }
   &__box-center {
     position: absolute;
     width: 171px;
@@ -109,6 +114,12 @@
     left: 50%;
     transform: translate(-32px);
     z-index: -1;
+  }
+  &__box-cafes {
+    display: none;
+  }
+  &__box-trucks {
+    display: none;
   }
 }
 
@@ -130,6 +141,36 @@
       height: 399px;
       margin: 0 auto;
     }
+    &__menu {
+      justify-content: flex-start;
+    }
+    &__menu-item:nth-of-type(4) {
+      display: block;
+    }
+    &__btn-menu {
+      margin-left: 291px;
+    }
+    &__btn-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      border-radius: 22px;
+      width: 159px;
+      height: 44px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 21px;
+      color: var.$red;
+      margin-left: 30px;
+      &:hover {
+        background-color: var.$grey;
+      }
+    }
+    &__btn-link-icon {
+      margin-left: 12.08px;
+      transform: translateY(1px);
+    }
     &__heading {
       font-size: 22px;
       line-height: 1.14;
@@ -145,6 +186,7 @@
     &__btn-list {
       padding-top: 20px;
     }
+
     &__circle {
       transform: translateX(-77px);
       bottom: 46px;
@@ -152,7 +194,8 @@
       height: 322px;
     }
     &__box-left {
-      left: 34px;
+      left: 50%;
+      transform: translateX(-350px);
       bottom: 28px;
       position: absolute;
       display: flex;
@@ -172,6 +215,68 @@
     &__box-center {
       width: 143px;
       transform: translate(-6px);
+    }
+    &__box-right {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(182px);
+    }
+    &__box-cafes {
+      display: block;
+      position: absolute;
+      top: 96px;
+      left: 50%;
+      transform: translateX(307px);
+      &::after {
+        content: '';
+        display: block;
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+        background-color: var.$white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        transform: translate(7px, -2px);
+      }
+    }
+    &__box-trucks {
+      display: block;
+      position: absolute;
+      top: 152px;
+      left: 50%;
+      transform: translateX(299px);
+      &::after {
+        content: '';
+        display: block;
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+        background-color: var.$white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        transform: translate(7px, -2px);
+      }
+    }
+    &__box-number {
+      font-family: var.$secondaryFont;
+      font-size: 28px;
+      line-height: 1.14;
+      letter-spacing: 0.04em;
+      text-align: right;
+      text-transform: uppercase;
+      color: var.$red;
+    }
+    &__box-dscr {
+      font-size: 8px;
+      line-height: 1.25;
+      text-align: right;
+      color: var.$white;
     }
   }
 }
