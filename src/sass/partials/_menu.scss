@@ -2,5 +2,8 @@
 @use '../variables' as var;
 
 .menu {
-  display: none;
+  display: block;
+  &__list {
+    display: flex;
+  }
 }
