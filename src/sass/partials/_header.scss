@@ -19,7 +19,7 @@
   &__logo {
     display: block;
   }
-  &__button {
+  &__btn-menu {
     border: none;
     background-color: inherit;
   }
@@ -34,14 +34,18 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var.$white;
-    padding-top: 137px;
-    padding-right: 62px;
+    margin-top: 137px;
+    margin-right: 62px;
     max-width: 230px;
+    @include transition(transform, 500ms);
     &--highlight {
       font-size: 48px;
       line-height: 0.96;
       color: var.$red;
       padding: 0;
+    }
+    &:hover {
+      transform: scale(1.1);
     }
   }
   &__btn-list {
@@ -62,8 +66,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    @include transition(background-color);
+    @include transition(background-color, 250ms);
     &--red {
       background-color: var.$red;
       color: var.$white;
@@ -95,9 +98,13 @@
     background-color: var.$lightPink;
     z-index: -1;
   }
+  &__box-left {
+    display: none;
+  }
   &__box-center {
     position: absolute;
     width: 171px;
+    height: auto;
     bottom: 0%;
     left: 50%;
     transform: translate(-32px);
@@ -110,6 +117,61 @@
     &__container {
       width: 480px;
       margin: 0 auto;
+    }
+  }
+}
+
+@include rwd(var.$medium) {
+  .header {
+    &__container {
+      width: 768px;
+      padding: 37px 34px 0 34px;
+      min-width: 320px;
+      height: 399px;
+      margin: 0 auto;
+    }
+    &__heading {
+      font-size: 22px;
+      line-height: 1.14;
+      margin-top: 15px;
+      margin-right: 62px;
+      max-width: 162px;
+      @include transition(transform, 500ms);
+      &--highlight {
+        font-size: 34px;
+        line-height: 0.88;
+      }
+    }
+    &__btn-list {
+      padding-top: 20px;
+    }
+    &__circle {
+      transform: translateX(-77px);
+      bottom: 46px;
+      width: 324px;
+      height: 322px;
+    }
+    &__box-left {
+      left: 34px;
+      bottom: 28px;
+      position: absolute;
+      display: flex;
+    }
+    &__box-left-text {
+      width: 114px;
+      font-size: 8px;
+      line-height: 1.5;
+      color: var.$white;
+      transform: translateX(-4px);
+      padding-top: 47px;
+    }
+    &__hero-link {
+      display: inline-block;
+      padding-top: 7px;
+    }
+    &__box-center {
+      width: 143px;
+      transform: translate(-6px);
     }
   }
 }
