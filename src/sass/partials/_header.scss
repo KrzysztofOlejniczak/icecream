@@ -11,18 +11,20 @@
     min-width: 320px;
     height: 502px;
   }
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__logo {
     display: block;
   }
   &__button {
     border: none;
     background-color: inherit;
-    position: absolute;
-    right: 20px;
-    top: 25px;
   }
-  &__hero {
-  }
+  // &__hero {
+  // }
   &__heading {
     font-family: var.$secondaryFont;
     font-style: normal;
@@ -61,15 +63,24 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    @include transition(background-color);
     &--red {
       background-color: var.$red;
       color: var.$white;
       width: 62.4px;
+      &:hover,
+      &:focus {
+        background-color: var.$darRed;
+      }
     }
     &--white {
       background-color: var.$white;
       color: var.$red;
       width: 82.8px;
+      &:hover,
+      &:focus {
+        background-color: var.$grey;
+      }
     }
   }
   &__circle {
@@ -84,12 +95,21 @@
     background-color: var.$lightPink;
     z-index: -1;
   }
-  &__box1 {
+  &__box-center {
     position: absolute;
     width: 171px;
     bottom: 0%;
     left: 50%;
     transform: translate(-32px);
     z-index: -1;
+  }
+}
+
+@include rwd(var.$small) {
+  .header {
+    &__container {
+      width: 480px;
+      margin: 0 auto;
+    }
   }
 }

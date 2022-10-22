@@ -1,24 +1,32 @@
 <header class="header">
   <div class="header__container">
-    <a href="#">
-      <picture class="header__logo">
-        <source srcset="./images/header/logo.png 1x, ./images/header/logo@2x.png 2x" />
-        <img src="./images/header/logo.png" alt="logo" /></picture
-    ></a>
-    <nav class="menu"></nav>
-    <button class="header__button" type="button">
-      <svg
-        width="20"
-        height="14"
-        viewBox="0 0 20 14"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M0 1H20" stroke="#D41443" />
-        <path d="M0 7H20" stroke="#D41443" />
-        <path d="M0 13H20" stroke="#D41443" />
-      </svg>
-    </button>
+    <ul class="header__menu">
+      <li>
+        <a href="#">
+          <picture class="header__logo">
+            <source srcset="./images/header/logo.png 1x, ./images/header/logo@2x.png 2x" />
+            <img src="./images/header/logo.png" alt="logo" /></picture
+        ></a>
+      </li>
+      <li>
+        <nav class="menu"></nav>
+      </li>
+      <li>
+        <button class="header__button" type="button">
+          <svg
+            width="20"
+            height="14"
+            viewBox="0 0 20 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0 1H20" stroke="#D41443" />
+            <path d="M0 7H20" stroke="#D41443" />
+            <path d="M0 13H20" stroke="#D41443" />
+          </svg>
+        </button>
+      </li>
+    </ul>
     <section class="header__hero">
       <h1 class="header__heading">
         ice cream made with <span class="header__heading header__heading--highlight">passion</span>
@@ -30,7 +38,7 @@
         </li>
       </ul>
       <div class="header__circle"></div>
-      <div class="header__box1">
+      <div class="header__box-center">
         <picture>
           <source
             srcset="
