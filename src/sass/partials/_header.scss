@@ -1,5 +1,6 @@
 @use '../utils/mixins' as *;
 @use '../variables' as var;
+@use '../utils/animations' as *;
 
 .header {
   position: relative;
@@ -337,6 +338,11 @@
       transform: translateX(-563px);
       bottom: 45px;
     }
+    &__box-left-img {
+      animation-name: shake;
+      animation-duration: 1s;
+      animation-fill-mode: backwards;
+    }
     &__box-left-text {
       width: 200px;
       font-size: 14px;
@@ -352,7 +358,12 @@
     }
     &__box-center {
       width: 236px;
-      transform: translate(-46px);
+      transform: translate(-46px, 0);
+      animation-name: moveUp;
+      animation-duration: 2000ms;
+      animation-delay: 1000ms;
+      animation-timing-function: cubic-bezier(0.06, 0.65, 0.57, 0.97);
+      animation-fill-mode: backwards;
     }
     &__box-right {
       transform: translateX(238px);
