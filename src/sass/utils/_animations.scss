@@ -30,3 +30,30 @@
     transform: translate(-46px, 0);
   }
 }
+
+@keyframes moveDown {
+  0% {
+    transform: translate(-165px, -115%);
+  }
+  40% {
+    transform: translate(-165px, 0);
+  }
+  50% {
+    transform: translate(-165px, -7%);
+  }
+  60% {
+    transform: translate(-165px, 0);
+  }
+  70% {
+    transform: translate(-165px, -4%);
+  }
+  80% {
+    transform: translate(-165px, 0);
+  }
+  90% {
+    transform: translate(-165px, -2%);
+  }
+  100% {
+    transform: translate(-165px, 0);
+  }
+}

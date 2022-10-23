@@ -329,10 +329,15 @@
       }
     }
     &__circle {
-      transform: translateX(-165px);
+      transform: translate(-165px, 0%);
       bottom: 75px;
       width: 538px;
       height: 538px;
+      animation-name: moveDown;
+      animation-duration: 1000ms;
+      animation-delay: 500ms;
+      animation-timing-function: cubic-bezier(0.06, 0.65, 0.57, 0.97);
+      animation-fill-mode: backwards;
     }
     &__box-left {
       transform: translateX(-563px);
