@@ -1,4 +1,5 @@
-// @import './../variables';
+@use '../utils/mixins' as *;
+@use '../variables' as var;
 
 .products {
   display: flex;
@@ -9,23 +10,23 @@
     min-width: 320px;
   }
   &__heading-label {
-    font-family: $t_secondFontFamily;
+    font-family: var.$secondaryFont;
     font-size: 18px;
     line-height: 1.17;
     text-align: center;
     text-transform: uppercase;
-    color: getColor('c_lightPink');
+    color: var.$lightPink;
     padding-top: 121px;
   }
   &__heading {
-    font-family: $t_secondFontFamily;
+    font-family: var.$secondaryFont;
     font-size: 34px;
     line-height: 1.15;
     text-align: center;
     letter-spacing: 0.04em;
     text-transform: uppercase;
 
-    color: getColor('c_darkPink');
+    color: var.$red;
 
     padding: 15px 0 144px;
   }
@@ -42,7 +43,7 @@
     height: 485px;
     border-radius: 24px;
     &:nth-of-type(1) {
-      background: getColor('c_lightPink2');
+      background: var.$pink_bg;
 
       margin: 0 20px 110px;
       position: relative;
@@ -60,7 +61,7 @@
       transform: translate(-50%, -113px);
     }
     &:nth-of-type(2) {
-      background: getColor('c_lightBrown');
+      background: var.$brown_bg;
 
       margin: 0 20px 109px;
       position: relative;
@@ -78,7 +79,7 @@
       transform: translate(-50%, -113px);
     }
     &:nth-of-type(3) {
-      background: getColor('c_lightGreen');
+      background: var.$green_bg;
 
       margin: 0 20px 98px;
       position: relative;
@@ -97,14 +98,14 @@
     }
   }
   &__product-name {
-    font-family: $t_secondFontFamily;
+    font-family: var.$secondaryFont;
     font-size: 20px;
     line-height: 1.15;
     font-weight: 400;
     text-align: center;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: getColor('c_white');
+    color: var.$white;
 
     margin-top: 161px;
     &::after {
@@ -119,14 +120,14 @@
     }
   }
   &__product-description {
-    font-family: $t_fontFamily;
+    font-family: var.$primaryFont;
     padding: 0 39px 0 41px;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.52;
     text-align: center;
     letter-spacing: 0.04em;
-    color: getColor('c_white');
+    color: var.$white;
   }
   &__btn {
     width: 40px;
@@ -140,7 +141,7 @@
     bottom: 41px;
     transform: translateX(-50%);
     cursor: pointer;
-    transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition(transform, 250ms);
     &:hover,
     &:focus {
       transform: translateX(-50%) rotate(-90deg);
@@ -153,13 +154,13 @@
     z-index: 1;
     transform: scale(0);
     border-radius: 5px;
-    background-color: getColor('c_white');
+    background-color: var.$white;
 
     position: absolute;
     bottom: 20px;
     left: 20px;
     box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-    transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition(transform, 250ms);
     padding: 50px 20px 20px 20px;
     &.open {
       transform: scale(1);
@@ -172,24 +173,24 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 1px solid getColor('c_black');
+    border: 1px solid var.$black;
     background-color: inherit;
     cursor: pointer;
   }
   &__box-title {
-    font-family: $t_secondFontFamily;
+    font-family: var.$secondaryFont;
     font-size: 18px;
     line-height: 1.17;
     font-weight: 400;
     text-align: center;
     text-transform: uppercase;
-    color: getColor('c_black');
+    color: var.$black;
 
     padding-bottom: 10px;
   }
   &__box-list {
     padding: 10px;
-    border: 1px dashed getColor('c_darkPink2');
+    border: 1px dashed var.$darkRed;
 
     border-radius: 5px;
   }
@@ -199,10 +200,7 @@
   }
 }
 
-@media (min-device-pixel-ratio: 2),
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+@include retina {
   .products {
     &__item {
       &:nth-of-type(1)::before {
@@ -227,7 +225,7 @@
   }
 }
 
-@media screen and (min-width: 480px) {
+@include rwd(var.$small) {
   .products {
     &__container {
       width: 480px;
@@ -236,7 +234,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@include rwd(var.$medium) {
   .products {
     &__container {
       width: 768px;
@@ -327,10 +325,7 @@
       left: 10px;
     }
   }
-  @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+  @include retina {
     .products {
       &__item {
         &:nth-of-type(1)::before {
@@ -347,7 +342,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@include rwd(var.$large) {
   .products {
     &__container {
       width: 1280px;
@@ -449,10 +444,7 @@
       left: 10px;
     }
   }
-  @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+  @include retina {
     .products {
       &__item {
         &:nth-of-type(1)::before {
