@@ -1,0 +1,33 @@
+@use '../utils/mixins' as *;
+@use '../variables' as var;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var.$pink_bg2;
+  &__container {
+    min-width: 320px;
+  }
+  &__heading-label {
+    font-family: var.$secondaryFont;
+    font-size: 18px;
+    line-height: 1.17;
+    text-align: center;
+    text-transform: uppercase;
+    color: var.$lightPink;
+    padding-top: 125px;
+  }
+  &__heading {
+    font-family: var.$secondaryFont;
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var.$red;
+    padding: 15px 60px 26px;
+  }
+}
