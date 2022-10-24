@@ -1,0 +1,83 @@
+@use '../utils/mixins' as *;
+@use '../variables' as var;
+
+.mobile-menu {
+  background-color: var.$darkPink;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 250px;
+  }
+  &__close-btn {
+    position: absolute;
+    top: 23px;
+    right: 28px;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+  }
+  &__btn-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var.$white;
+    border-radius: 22px;
+    width: 209px;
+    height: 44px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.31;
+    color: var.$red;
+    margin: 60px auto 19px;
+  }
+  &__btn-link-icon {
+    margin-left: 16px;
+    transform: translateY(1px);
+  }
+  &__link {
+    font-family: var.$primaryFont;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    display: flex;
+    align-items: center;
+    padding: 13px 0 13px 21px;
+    color: var.$white;
+    border-bottom: 1px solid var.$menuPink;
+    &--red {
+      color: var.$red;
+      border-top: 1px solid var.$menuPink;
+    }
+  }
+}
+@include rwd(var.$medium) {
+  .mobile-menu {
+    &__container {
+      width: 40vw;
+    }
+    &__close-btn {
+      right: 34px;
+    }
+    &__btn-link {
+      width: 186px;
+    }
+    &__btn-link-icon {
+      margin-left: 14px;
+      transform: translateY(1px);
+    }
+    &__link {
+      padding: 13px 0 13px 24px;
+    }
+  }
+}
