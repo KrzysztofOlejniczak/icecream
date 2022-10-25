@@ -160,3 +160,73 @@
     }
   }
 }
+
+@include rwd(var.$large) {
+  .about {
+    background-image: url('../images/about/milk-bg_large.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom -66px left 0;
+    &__container {
+      width: var.$large;
+    }
+    &__heading-label {
+      font-size: 30px;
+      line-height: 1.13;
+      padding-top: 125px;
+    }
+    &__heading {
+      font-size: 58px;
+      line-height: 1.14;
+      letter-spacing: 0.06em;
+      padding: 15px 0 55px;
+    }
+    &__content {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 74px;
+    }
+    &__picture {
+      width: 516px;
+      height: auto;
+    }
+    &__description-box {
+      padding-top: 51px;
+      background-image: none;
+    }
+    &__text {
+      width: 436px;
+      padding: 0 0 28px;
+      font-size: 16px;
+      line-height: 1.75;
+      &--light {
+        font-size: 14px;
+        line-height: 1.93;
+        color: var.$darkGrey;
+        padding: 0 0 27px;
+      }
+    }
+    &__text-paragraph {
+      padding: 0 0 45px;
+      font-size: 14px;
+      line-height: 1.93;
+      color: var.$darkGrey;
+    }
+    &__btn-link {
+      font-size: 16px;
+      line-height: 1.31;
+      margin-left: 0;
+      &:hover,
+      &:focus {
+        background: var.$grey;
+      }
+    }
+  }
+  @include retina {
+    .about {
+      background-image: url('../images/about/milk-bg_large.png');
+    }
+  }
+}
