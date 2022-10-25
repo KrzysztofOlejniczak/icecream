@@ -2,13 +2,13 @@
 @use '../variables' as var;
 
 .about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: var.$pink_bg2;
   &__container {
     min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   &__heading-label {
     font-family: var.$secondaryFont;
@@ -29,5 +29,70 @@
     text-transform: uppercase;
     color: var.$red;
     padding: 15px 60px 26px;
+  }
+  &__description-box {
+    padding-top: 46px;
+    background-image: url('../images/about/milk-bg_small.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom 61px left 0;
+  }
+  &__text {
+    padding: 0 50px 47px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.58;
+    color: var.$black;
+    &--light {
+      color: var.$darkGrey;
+      padding: 0 50px 19px;
+    }
+  }
+  &__text-paragraph {
+    display: block;
+    padding: 0 50px 19px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.58;
+    color: var.$darkGrey;
+  }
+  &__btn-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var.$white;
+    border-radius: 22px;
+    width: 176px;
+    height: 44px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    color: var.$red;
+    margin-left: 50px;
+    &:hover,
+    &:focus {
+      background: var.$grey;
+    }
+  }
+  &__btn-link-icon {
+    margin-left: 14px;
+    transform: translateY(1px);
+  }
+}
+
+@include retina {
+  .about {
+    &__description-box {
+      background-image: url('../images/about/milk-bg_small@2x.png');
+    }
+  }
+}
+
+@include rwd(var.$small) {
+  .about {
+    &__container {
+      width: 480px;
+      margin: 0 auto;
+    }
   }
 }
