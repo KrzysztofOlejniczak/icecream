@@ -1,3 +1,6 @@
+@use '../utils/mixins' as *;
+@use '../variables' as var;
+
 .hidden {
   display: none;
 }
@@ -27,7 +30,7 @@
     width: calc(100% - 40px);
   }
   &__box {
-    background-color: #fafafa;
+    background-color: var.$lightGrey;
     padding: 43px 66px 26px 57px;
     z-index: 2;
     position: relative;
@@ -58,12 +61,11 @@
   }
 
   &__text {
-    font-family: $t_fontFamily;
     font-weight: 500;
     font-size: 12px;
     line-height: 2.58;
     text-align: center;
-    color: #000000;
+    color: var.$black;
     z-index: 2;
     background-image: linear-gradient(
       0deg,
@@ -78,12 +80,11 @@
     background-size: 62px 62px;
   }
   &__name {
-    font-family: $t_fontFamily;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.86;
     text-align: center;
-    color: #000000;
+    color: var.$black;
     padding-top: 52px;
   }
   &__slider {
@@ -96,32 +97,28 @@
   }
 }
 
-@media (min-device-pixel-ratio: 2),
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+@include retina {
   .reviews {
     &__box {
       &::after {
         background-image: url('../images/reviews/dots@2x.png');
-        background-repeat: no-repeat;
       }
     }
   }
 }
-@media screen and (min-width: 480px) {
+@include rwd(var.$small) {
   .reviews {
     &__container {
-      width: 480px;
+      width: var.$small;
       margin: 0 auto;
     }
   }
 }
 
-@media screen and (min-width: 768px) {
+@include rwd(var.$medium) {
   .reviews {
     &__container {
-      width: 768px;
+      width: var.$medium;
       margin: 0 auto;
     }
     &__avatar {
@@ -152,25 +149,21 @@
     &__slider {
       padding-top: 35px;
     }
-    @media (min-device-pixel-ratio: 2),
-      (-webkit-min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
+    @include retina {
       .reviews {
         &__box {
           &::after {
             background-image: url('../images/reviews/dots@2x.png');
-            background-repeat: no-repeat;
           }
         }
       }
     }
   }
 }
-@media screen and (min-width: 1280px) {
+@include rwd(var.$large) {
   .reviews {
     &__container {
-      width: 1280px;
+      width: var.$large;
       margin: 0 auto;
     }
     &__avatar {
@@ -199,15 +192,11 @@
       }
     }
   }
-  @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+  @include retina {
     .reviews {
       &__box {
         &::after {
           background-image: url('../images/reviews/dots@2x.png');
-          background-repeat: no-repeat;
         }
       }
     }
