@@ -1,0 +1,34 @@
+@use '../utils/mixins' as *;
+@use '../variables' as var;
+
+.gallery {
+  background: linear-gradient(to bottom, var.$pink_bg2 40%, var.$white 40%);
+  &__container {
+    min-width: 320px;
+  }
+}
+
+@include rwd(var.$small) {
+  .gallery {
+    &__container {
+      width: var.$small;
+      margin: 0 auto;
+    }
+  }
+}
+
+@include rwd(var.$medium) {
+  .gallery {
+    &__container {
+      width: var.$medium;
+    }
+  }
+}
+
+@include rwd(var.$large) {
+  .gallery {
+    &__container {
+      width: var.$large;
+    }
+  }
+}
