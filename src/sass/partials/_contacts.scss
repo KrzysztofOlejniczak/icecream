@@ -137,3 +137,132 @@
     }
   }
 }
+
+@include rwd(var.$medium) {
+  .contacts {
+    background: linear-gradient(to bottom, var.$white 78px, var.$pink_bg2 78px);
+    &__container {
+      width: var.$medium;
+      margin: 0 auto;
+    }
+    &__list {
+      margin-top: 119px;
+      flex-direction: row;
+    }
+    &__item {
+      width: 220px;
+      padding: 50px 44px 50px 31px;
+    }
+    &__label {
+      height: 28px;
+      border-radius: 6px;
+      margin-bottom: 30px;
+      &--bg-brown {
+        background-color: var.$brown_bg;
+        width: 73px;
+      }
+      &--bg-green {
+        background-color: var.$green_bg;
+        width: 138px;
+      }
+    }
+    &__category {
+      font-size: 16px;
+      line-height: 1.88;
+      transform: translateY(1px);
+    }
+    &__city {
+      font-size: 14px;
+      line-height: 1.86;
+      margin-bottom: 14px;
+    }
+    &__description {
+      font-size: 14px;
+      line-height: 1.64;
+      margin-bottom: 30px;
+    }
+    &__hours-list {
+      gap: 16px;
+      padding: 30px 0;
+    }
+    &__hours {
+      font-size: 14px;
+      line-height: 1.86;
+    }
+    &__link-list {
+      margin-top: 30px;
+    }
+    &__link {
+      font-size: 14px;
+      line-height: 1.86;
+    }
+    &__btn-list {
+      flex-direction: row;
+      gap: 14.5px;
+      margin-top: 81px;
+    }
+    &__btn-link {
+      width: 191.5px;
+    }
+  }
+}
+@include rwd(var.$large) {
+  .contacts {
+    background: no-repeat top 102px left 0 url('../images/contacts/bg.png'),
+      linear-gradient(to bottom, var.$white 102px, var.$pink_bg2 102px);
+    background-size: contain;
+    &__container {
+      width: var.$large;
+      margin: 0 auto;
+    }
+    &__list {
+      margin-top: 132px;
+    }
+    &__item {
+      width: 330px;
+      padding: 51px 44px 62px 43px;
+    }
+    &__label {
+      margin-bottom: 32px;
+    }
+    &__city {
+      font-size: 16px;
+      line-height: 1.88;
+      margin-bottom: 10px;
+    }
+    &__description {
+      font-size: 16px;
+      line-height: 1.81;
+      margin-bottom: 32px;
+    }
+    &__hours-list {
+      gap: 15px;
+      padding: 32px 0;
+    }
+    &__hours {
+      font-size: 16px;
+      line-height: 1.88;
+    }
+    &__link-list {
+      margin-top: 32px;
+    }
+    &__link {
+      font-size: 16px;
+      line-height: 1.81;
+    }
+    &__btn-list {
+      gap: 15px;
+      margin-top: 86px;
+    }
+    &__btn-link {
+      width: 198px;
+    }
+  }
+  @include retina {
+    .contacts {
+      background: no-repeat top 102px left 0 url('../images/contacts/bg@2x.png'),
+        linear-gradient(to bottom, var.$white 102px, var.$pink_bg2 102px);
+      background-size: contain;
+    }
+  }
+}
