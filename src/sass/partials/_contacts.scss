@@ -6,6 +6,9 @@
   &__container {
     min-width: 320px;
   }
+  &__heading {
+    display: none;
+  }
   &__list {
     margin-top: 86px;
     display: flex;
